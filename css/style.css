@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+#header {
+  background: goldenrod;
+}
+
+#header .header-middle {
+  position: relative;
+}
+
+#header .menu ul li:last-child .dropdown-ul {
+  left: auto !important;
+  right: 0 !important;
+}
+
+#header .menu ul li.dropped-li, #header .menu ul li.big-dropped-li {
+  position: relative;
+}
+
+#header .menu ul li.dropped-li:hover .dropdown-ul, #header .menu ul li.dropped-li:hover .big-dropped, #header .menu ul li.big-dropped-li:hover .dropdown-ul, #header .menu ul li.big-dropped-li:hover .big-dropped {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+#header .menu ul li.dropped-li .dropdown-ul, #header .menu ul li.dropped-li .big-dropped, #header .menu ul li.big-dropped-li .dropdown-ul, #header .menu ul li.big-dropped-li .big-dropped {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  -webkit-box-shadow: 0 0 20px 0 #ccc;
+          box-shadow: 0 0 20px 0 #ccc;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(15px);
+          transform: translateY(15px);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+#header .menu ul li.dropped-li .dropdown-ul li a, #header .menu ul li.dropped-li .big-dropped li a, #header .menu ul li.big-dropped-li .dropdown-ul li a, #header .menu ul li.big-dropped-li .big-dropped li a {
+  color: #888;
+  padding: 12px;
+}
+
+#header .menu ul li.dropped-li .dropdown-ul li a:hover, #header .menu ul li.dropped-li .big-dropped li a:hover, #header .menu ul li.big-dropped-li .dropdown-ul li a:hover, #header .menu ul li.big-dropped-li .big-dropped li a:hover {
+  color: navy;
+}
+
+#header .menu ul li.dropped-li .big-dropped, #header .menu ul li.big-dropped-li .big-dropped {
+  width: 100%;
+}
+
+#header .menu ul li.dropped-li .big-dropped h5, #header .menu ul li.big-dropped-li .big-dropped h5 {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  margin: 10px;
+}
+
+#header .menu ul li.dropped-li .big-dropped .dropped-item, #header .menu ul li.big-dropped-li .big-dropped .dropped-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#header .menu ul li.big-dropped-li {
+  position: static;
+}
+
+#header .menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+}
+
+#header .menu ul li a:hover {
+  color: navy;
+}
+
+@media screen and (max-width: 768px) {
+  #header {
+    position: relative;
+  }
+  #header .header-middle {
+    padding: 15px 0;
+  }
+  #header .header-middle nav.menu {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+  }
+  #header .header-middle nav.menu ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #header .header-middle nav.menu ul li {
+    background: midnightblue;
+  }
+  #header .header-middle nav.menu ul li:first-child {
+    background: red;
+    border-radius: 30px 0 30px 0;
+  }
+  #header .header-middle nav.menu ul li.dropped-li, #header .header-middle nav.menu ul li.big-dropped-li {
+    position: relative !important;
+  }
+  #header .header-middle nav.menu ul li.dropped-li .dropdown-ul, #header .header-middle nav.menu ul li.dropped-li .big-dropped, #header .header-middle nav.menu ul li.big-dropped-li .dropdown-ul, #header .header-middle nav.menu ul li.big-dropped-li .big-dropped {
+    display: block;
+    background: #fff;
+    position: static !important;
+    display: none;
+    -webkit-transition: none;
+    transition: none;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  #header .header-middle nav.menu ul li.dropped-li .dropdown-ul li, #header .header-middle nav.menu ul li.dropped-li .big-dropped li, #header .header-middle nav.menu ul li.big-dropped-li .dropdown-ul li, #header .header-middle nav.menu ul li.big-dropped-li .big-dropped li {
+    border-bottom: 1px solid #ccc;
+  }
+  #header .header-middle nav.menu ul li.dropped-li .big-dropped .dropped-item ul, #header .header-middle nav.menu ul li.big-dropped-li .big-dropped .dropped-item ul {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+#header{
+    background: goldenrod;
+    // color:#fff;
+    .header-middle{
+        position: relative;
+
+    }
+    .menu{
+        // position: relative;
+
+        ul{
+            li{
+                &:last-child{
+                    .dropdown-ul{
+                        left: auto !important;
+                        right: 0 !important;
+                    }
+                }
+
+                &.dropped-li,&.big-dropped-li{
+                    position: relative;
+                    &:hover{
+                        .dropdown-ul,.big-dropped{
+                            opacity: 1;
+                            visibility: visible;
+                            transform: translateY(0);
+                        }
+                    }
+                    .dropdown-ul,.big-dropped{
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        min-width: 200px;
+                        box-shadow: 0 0 20px 0 #ccc;
+                        padding: 0;
+                        opacity: 0;
+                        visibility: hidden;
+                        transform: translateY(15px);
+                        transition:.3s ease-in-out;
+                        li{
+                            a{
+                                color:#888;
+                                padding: 12px;
+                                &:hover{
+                                    color:navy
+                                }
+                            }
+                        }
+                    }
+                    .big-dropped{
+                        width: 100%;
+                        h5{
+                            padding: 10px 0;
+                            border-bottom: 1px solid #ccc;
+                            margin: 10px;
+                        }
+                        .dropped-item{
+                            flex: 1;
+                        }
+                    }
+                }
+                &.big-dropped-li{
+                    position: static;
+                }
+                
+                a{
+                    color:#fff;
+                    text-decoration: none;
+                    display: block;
+                    padding: 15px;
+                    &:hover{
+                        color:navy
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and ( max-width:768px) {
+    #header{
+        position: relative;
+        .header-middle{
+            padding: 15px 0;
+            nav.menu{
+                position: absolute;
+                top: 100%;
+                // background:midnightblue;
+                width: 100%;
+                left: 0;
+                ul{
+                    flex-direction: column;
+                    li{
+                    background:midnightblue;
+
+                        &:first-child{
+                            background: red;
+                            border-radius: 30px 0 30px 0;
+                        }
+                        &.dropped-li,&.big-dropped-li{
+                            position: relative !important;
+                            .dropdown-ul,.big-dropped{
+                                display: block;
+                                background: #fff;
+                                position: static !important;
+                                display: none;
+                                transition: none;
+                                opacity: 1;
+                                visibility: visible;
+                                transform: translateY(0);
+                                li{
+                                    border-bottom: 1px solid #ccc;
+                                }
+                            }
+                            .big-dropped {
+                                .dropped-item{
+                                    ul{
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
